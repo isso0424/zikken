@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include "load.c"
-
 int save() {
   FILE *fp;
   int number;

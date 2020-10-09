@@ -23,8 +23,8 @@ int load(ROSTER rosters[]) {
 
   for (int i = 0; i < columns;i++) {
     int number;
-    char raw_number, name[256], guraduated[256];
-    int check = fscanf(
+    char name[256], guraduated[256];
+    fscanf(
       fp,
       "%d,%[^,],%s",
       &number,

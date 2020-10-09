@@ -1,5 +1,6 @@
 #include <string.h>
 #include "save.c"
+#include "load.c"
 
 int command_sorting(char command[]) {
   if (!strcmp(command, "help"))
