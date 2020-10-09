@@ -33,7 +33,8 @@ int load(ROSTER rosters[]) {
       guraduated
     );
     printf("%s\n", name);
-    ROSTER new_roster = {number, *name, *guraduated};
+    ROSTER new_roster;
+    new_roster.number = number;
     strcpy(new_roster.name, name);
     strcpy(new_roster.guraduated, guraduated);
     rosters[i] = new_roster;
