@@ -18,6 +18,7 @@ int save() {
   }
   printf("%d", number);
   fprintf(fp, "%d,%s,%s\n", number, name, guraduated);
+  fclose(fp);
 
   return 0;
 }

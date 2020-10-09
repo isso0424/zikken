@@ -19,21 +19,22 @@ int load(ROSTER rosters[]) {
     return 1;
   }
   int columns = get_file_columns(fp);
+  fp = fopen(file_name, "r");
 
-  for (int i = 0; i > columns;i++) {
+  for (int i = 0; i < columns;i++) {
     int number;
-    char raw_number, name, guraduated;
-    fscanf(
+    char raw_number, name[256], guraduated[256];
+    int check = fscanf(
       fp,
-      "%[^,],%[^,],%s",
-      &raw_number,
-      &name,
-      &guraduated
+      "%d,%[^,],%s",
+      &number,
+      name,
+      guraduated
     );
-    number = atoi(&raw_number);
-    ROSTER new_roster = {number, name, guraduated};
+    ROSTER new_roster = {number, *name, *guraduated};
     rosters[i] = new_roster;
   }
+  fclose(fp);
 
   return 0;
 }
