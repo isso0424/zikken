@@ -1,9 +1,5 @@
 #include <stdio.h>
-typedef struct {
-  int number;
-  char name;
-  char guraduated;
-} ROSTER;
+#include "type.c"
 
 int get_file_columns(FILE *fp) {
   char buffer[256];
