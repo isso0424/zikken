@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "type.c"
 
 int get_file_columns(FILE *fp) {
@@ -31,7 +32,10 @@ int load(ROSTER rosters[]) {
       name,
       guraduated
     );
+    printf("%s\n", name);
     ROSTER new_roster = {number, *name, *guraduated};
+    strcpy(new_roster.name, name);
+    strcpy(new_roster.guraduated, guraduated);
     rosters[i] = new_roster;
   }
   fclose(fp);
