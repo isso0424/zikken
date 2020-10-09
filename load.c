@@ -32,4 +32,6 @@ int load(ROSTER rosters[]) {
     ROSTER new_roster = {number, name, guraduated};
     rosters[i] = new_roster;
   }
+
+  return 0;
 }
