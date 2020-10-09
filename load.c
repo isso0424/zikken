@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "type.c"
 
 int get_file_columns(FILE *fp) {
@@ -21,14 +22,15 @@ int load(ROSTER rosters[]) {
 
   for (int i = 0; i > columns;i++) {
     int number;
-    char name, guraduated;
+    char raw_number, name, guraduated;
     fscanf(
       fp,
       "%[^,],%[^,],%s",
-      &number,
+      &raw_number,
       &name,
       &guraduated
     );
+    number = atoi(&raw_number);
     ROSTER new_roster = {number, name, guraduated};
     rosters[i] = new_roster;
   }

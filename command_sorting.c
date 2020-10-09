@@ -1,7 +1,11 @@
 #include <string.h>
+#include "save.c"
 
-void command_sorting(char command[]) {
-  if (!strcmp(command, "help")) {
+int command_sorting(char command[]) {
+  if (!strcmp(command, "help"))
     printf("print help!!!");
-  }
+  if (!strcmp(command, "save"))
+    return save();
+
+  return 0;
 }
