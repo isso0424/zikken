@@ -3,10 +3,18 @@
 #include <string.h>
 #include "type.c"
 
-int get_file_columns(FILE *fp) {
+int get_file_columns(const char *file_name) {
+  FILE *fp;
   char buffer[256];
   int line = 0;
+  fp = fopen(file_name, "r");
+  if (fp == NULL) {
+    printf("Cannot open rosters.csv.\nPlease check if it exist.");
+    return 1;
+  }
   while (fgets(buffer, 256, fp) != NULL) line++;
+
+  fclose(fp);
 
   return line;
 }
@@ -19,9 +27,9 @@ int load(ROSTER rosters[]) {
     printf("Cannot open rosters.csv.\nPlease check if it exist.");
     return 1;
   }
-  int columns = get_file_columns(fp);
   fp = fopen(file_name, "r");
 
+  int columns = get_file_columns(file_name);
   for (int i = 0; i < columns;i++) {
     int number;
     char name[256], guraduated[256];
