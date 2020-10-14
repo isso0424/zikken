@@ -3,6 +3,7 @@
 #include "load.c"
 #include "guraduated.c"
 #include "search_with_name.c"
+#include "search_with_number.c"
 
 #define CREATE_ROSTERS \
 const char *file_name = "rosters.csv";\
@@ -102,6 +103,11 @@ int command_sorting(char command[]) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
     searchnumber(numbers, names, size);
+  }
+  if (!strcmd(command, "search number name")) {
+    CREATE_ROSTERS
+    CREATE_ARRAIES_FROM_ROSTERS
+    search_name(numbers, names, size);
   }
 
   return 0;
