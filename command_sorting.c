@@ -2,6 +2,7 @@
 #include "save.c"
 #include "load.c"
 #include "guraduated.c"
+#include "search_with_name.c"
 
 #define CREATE_ROSTERS \
 const char *file_name = "rosters.csv";\
@@ -84,23 +85,23 @@ int command_sorting(char command[]) {
     printf("print help!!!");
   if (!strcmp(command, "save"))
     return save();
-  if (!strcmp(command, "sort_with_number")) {
+  if (!strcmp(command, "sort number")) {
     CREATE_ROSTERS
     sort_with_number(rosters, size);
   }
-  if (!strcmp(command, "sort_with_name")) {
+  if (!strcmp(command, "sort name")) {
     CREATE_ROSTERS
     sort_with_name(rosters, size);
   }
-  if (!strcmp(command, "seach_with_guraduated")) {
+  if (!strcmp(command, "search guraduated")) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
     search_with_guraduated(numbers, names, guraduated, size);
   }
-  if (!strcmp(command, "seach_with_guraduated")) {
+  if (!strcmp(command, "search name number")) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
-    search_with_guraduated(numbers, names, guraduated, size);
+    searchnumber(numbers, names, size);
   }
 
   return 0;
