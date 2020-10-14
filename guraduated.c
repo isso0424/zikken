@@ -7,7 +7,7 @@ void search_with_guraduated(
      int size)
 {
     char input[256];
-    printf("Please enter your junior high school\n>>>");
+    printf("\nPlease enter your junior high school\n>>>");
     scanf("%s",input);
     printf("number|name\n");
     for (int i = 0; i < size; i++) {    
