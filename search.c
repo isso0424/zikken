@@ -1,7 +1,7 @@
 #include <string.h>
-#include "guraduated.c"
-#include "search_with_number.c"
-#include "search_with_name.c"
+#include "search/guraduated.c"
+#include "search/search_with_number.c"
+#include "search/search_with_name.c"
 
 void search(int numbers[], char names[100][256], char guraduated[100][256], int size) {
   char command;
