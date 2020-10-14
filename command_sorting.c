@@ -1,6 +1,7 @@
 #include <string.h>
 #include "save.c"
 #include "load.c"
+#include "guraduated.c"
 
 #define CREATE_ROSTERS \
 const char *file_name = "rosters.csv";\
@@ -13,6 +14,16 @@ int size = sizeof(rosters) / sizeof(*rosters);
 #define CHECK_SORT(condition) \
 for (int i = 0; i < rosters_size - 1; i++) {\
   if (condition) return 1;\
+}
+
+#define CREATE_ARRAIES_FROM_ROSTERS \
+int numbers[100] = {};\
+char names[100][256] = {};\
+char guraduated[100][256] = {};\
+for (int i = 0; i < size; i++) {\
+  numbers[i] = rosters[i].number;\
+  strcpy(names[i], rosters[i].name);\
+  strcpy(guraduated[i], rosters[i].guraduated);\
 }
 
 #define SWAP_PARAMS(condition) \
@@ -73,10 +84,6 @@ int command_sorting(char command[]) {
     printf("print help!!!");
   if (!strcmp(command, "save"))
     return save();
-  if (!strcmp(command, "load")) {
-    ROSTER rosters[100] = {};
-    return load(rosters);
-  }
   if (!strcmp(command, "sort_with_number")) {
     CREATE_ROSTERS
     sort_with_number(rosters, size);
@@ -84,6 +91,16 @@ int command_sorting(char command[]) {
   if (!strcmp(command, "sort_with_name")) {
     CREATE_ROSTERS
     sort_with_name(rosters, size);
+  }
+  if (!strcmp(command, "seach_with_guraduated")) {
+    CREATE_ROSTERS
+    CREATE_ARRAIES_FROM_ROSTERS
+    search_with_guraduated(numbers, names, guraduated, size);
+  }
+  if (!strcmp(command, "seach_with_guraduated")) {
+    CREATE_ROSTERS
+    CREATE_ARRAIES_FROM_ROSTERS
+    search_with_guraduated(numbers, names, guraduated, size);
   }
 
   return 0;
