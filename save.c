@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define INPUT_INFOMATION(description, value) \
 printf(description);\

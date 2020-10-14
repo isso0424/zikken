@@ -86,27 +86,29 @@ int command_sorting(char command[]) {
     printf("print help!!!");
   if (!strcmp(command, "save"))
     return save();
-  if (!strcmp(command, "sort number")) {
+  if (!strcmp(command, "sort_number")) {
     CREATE_ROSTERS
     sort_with_number(rosters, size);
   }
-  if (!strcmp(command, "sort name")) {
+  if (!strcmp(command, "sort_name")) {
     CREATE_ROSTERS
     sort_with_name(rosters, size);
   }
-  if (!strcmp(command, "search guraduated")) {
+  if (!strcmp(command, "search_guraduated")) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
     search_with_guraduated(numbers, names, guraduated, size);
   }
-  if (!strcmp(command, "search name number")) {
+  if (!strcmp(command, "search_name_number")) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
+    printf("Please input search target student name\n>>>");
     searchnumber(numbers, names, size);
   }
-  if (!strcmp(command, "search number name")) {
+  if (!strcmp(command, "search_number_name")) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
+    printf("Please input search target number\n>>>");
     search_name(numbers, names, size);
   }
 
