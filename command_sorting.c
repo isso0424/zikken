@@ -104,7 +104,7 @@ int command_sorting(char command[]) {
     CREATE_ARRAIES_FROM_ROSTERS
     searchnumber(numbers, names, size);
   }
-  if (!strcmd(command, "search number name")) {
+  if (!strcmp(command, "search number name")) {
     CREATE_ROSTERS
     CREATE_ARRAIES_FROM_ROSTERS
     search_name(numbers, names, size);
