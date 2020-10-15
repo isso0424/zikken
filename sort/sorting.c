@@ -1,3 +1,4 @@
+#include <string.h>
 #include "macros.c"
 #include "../load.c"
 
@@ -11,6 +12,22 @@ void listed_rosters(ROSTER rosters[], int rosters_size) {
       rosters[i].guraduated
     );
   }
+}
+
+int check_sorted_with_guraduated(ROSTER rosters[], int rosters_size) {
+  CHECK_SORT(strcmp(rosters[i].guraduated, rosters[i + 1].guraduated) > 0)
+
+  return 0;
+}
+
+int sort_with_guraduated(ROSTER rosters[], int rosters_size) {
+  while (check_sorted_with_guraduated(rosters, rosters_size)) {
+    SWAP_PARAMS(strcmp(tmp.guraduated, rosters[i].guraduated) > 0)
+  }
+
+  listed_rosters(rosters, rosters_size);
+
+  return 0;
 }
 
 int check_sorted_with_number(ROSTER rosters[], int rosters_size) {
@@ -36,7 +53,7 @@ int check_sorted_with_name(ROSTER rosters[], int rosters_size) {
 }
 
 int sort_with_name(ROSTER rosters[], int rosters_size) {
-  while(check_sorted_with_name(rosters, rosters_size)) {
+  while (check_sorted_with_name(rosters, rosters_size)) {
     SWAP_PARAMS(strcmp(tmp.name, rosters[i].name) > 0)
   }
 

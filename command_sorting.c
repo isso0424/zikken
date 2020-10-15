@@ -28,7 +28,7 @@ int command_sorting(char command[]) {
     return save();
   if (!strcmp(command, "sort")) {
     CREATE_ROSTERS
-    sort_with_name(rosters, size);
+    sort(rosters, size);
   }
   if (!strcmp(command, "search")) {
     CREATE_ROSTERS
