@@ -56,6 +56,7 @@ int sort_with_name(ROSTER rosters[], int rosters_size) {
   while (check_sorted_with_name(rosters, rosters_size)) {
     SWAP_PARAMS(strcmp(tmp.name, rosters[i].name) > 0)
   }
+  listed_rosters(rosters,rosters_size);
 
   return 0;
 }
