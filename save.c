@@ -9,9 +9,9 @@ scanf("%s", value);
 int save() {
   FILE *fp;
   char raw_number[8], name[256], guraduated[256];
-  INPUT_INFOMATION("Please input Student Number.\n>>>", raw_number);
-  INPUT_INFOMATION("Please input student's name.\n>>>", name);
-  INPUT_INFOMATION("Please input student's guraduated junior high school.\n>>>", guraduated);
+  INPUT_INFOMATION("Please input Student Number.\nInput:", raw_number);
+  INPUT_INFOMATION("Please input student's name.\nInput:", name);
+  INPUT_INFOMATION("Please input student's guraduated junior high school.\nInput:", guraduated);
   int number = atoi(raw_number);
   fp = fopen("rosters.csv", "a");
   if (fp == NULL) {
