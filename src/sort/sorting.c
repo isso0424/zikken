@@ -47,14 +47,14 @@ int sort_with_number(ROSTER rosters[], int rosters_size) {
 }
 
 int check_sorted_with_name(ROSTER rosters[], int rosters_size) {
-  CHECK_SORT(strcmp(rosters[i].name, rosters[i + 1].name) > 0)
+  CHECK_SORT(rosters[i].name[0] > rosters[i + 1].name[0])
 
   return 0;
 }
 
 int sort_with_name(ROSTER rosters[], int rosters_size) {
   while (check_sorted_with_name(rosters, rosters_size)) {
-    SWAP_PARAMS(strcmp(tmp.name, rosters[i].name) > 0)
+    SWAP_PARAMS(tmp.name[0] > rosters[i].name[0])
   }
   listed_rosters(rosters,rosters_size);
 

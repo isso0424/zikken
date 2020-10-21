@@ -23,7 +23,6 @@ void search(int numbers[], char names[100][256], char guraduated[100][256], int 
   } else if (!strcmp(command, "Name")) {
     if (!strcmp(target, "StudentNumber")) {
       searchnumber(numbers, names, size);
-
       return;
     }
     search_with_name(numbers, names, guraduated, size, target);

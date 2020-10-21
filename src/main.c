@@ -7,8 +7,8 @@ void interprinter() {
     printf("\nPlease Enter Command\nIf you don't know about commands, you can use `help`.\n>>>");
     char command[256];
     scanf("%s", command);
-    command_sorting(command);
     if (!strcmp(command, "exit")) return;
+    else command_sorting(command);
   }
 }
 

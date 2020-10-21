@@ -6,8 +6,8 @@ void search_name(int num[],char name[100][256], int size){
     scanf("%d",&a);
     for(b=0;b<size;b++){
         if(num[b] == a){
+            printf("%s\n", name[b]);
             break;
         }
     }
-    printf("%s\n", name[b]);
 }
